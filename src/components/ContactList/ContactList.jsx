@@ -7,7 +7,7 @@ import {
 } from 'components/ContactList/ContactList.Styled';
 export default class ContactList extends Component {
   render() {
-    const { title, contacts, onDeleteContact } = this.props;
+    const { contacts, onDeleteContact } = this.props;
 
     return (
       <div>
