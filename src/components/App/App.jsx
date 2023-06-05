@@ -22,7 +22,11 @@ export class App extends Component {
   };
   addContact = newContact => {
     const { contacts } = this.state;
-    if (contacts.find(contact => contact.name === newContact.name)) {
+    if (
+      contacts.find(
+        contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
+      )
+    ) {
       alert(`${newContact.name} is already in contacts.`);
       return;
     }
@@ -53,7 +57,6 @@ export class App extends Component {
   };
 
   render() {
-  
     const filteredContacts = this.filterContacts();
 
     return (
@@ -65,6 +68,7 @@ export class App extends Component {
         />
         <h2>Contacts</h2>
         <SearchContactByName
+          filter={this.state.filter}
           title="Find contact by name"
           onFilterChange={this.handleFilterChange}
         />

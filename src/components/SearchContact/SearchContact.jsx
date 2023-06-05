@@ -8,6 +8,7 @@ export class SearchContactByName extends Component {
         <Text>{this.props.title}</Text>
         <form>
           <Input
+            value={this.props.filter}
             type="text"
             onChange={this.props.onFilterChange}
             placeholder="Search by name"
